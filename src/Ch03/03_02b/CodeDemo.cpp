@@ -34,11 +34,11 @@ int main(){
     double lowPowerDrain = 2.0;     // Power-saving mode (2% per hour)
     int hours = 24;                 // Simulate 24 hours of usage
 
-    Battery myBattery(batteryCapacity, normaDrain, lowPowerDrain);
+    Battery myBattery(batteryCapacity, normalDrain, lowPowerDrain);
     myBattery.simulateUsage(hours);
 
     std::cout << "Battery charge after " << hours << " hours: "
-              << myBattery.getCharge() << "%" << std::endl
+              << myBattery.getCharge() << "%" << std::endl;
 
     std::cout << std::endl << std::endl;
     return 0;
