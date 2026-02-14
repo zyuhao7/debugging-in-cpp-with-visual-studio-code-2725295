@@ -12,16 +12,19 @@ private:
 
 public:
     Battery(double capacity, double normalDrain, double lowPowerDrain)
-    : charge(capacity), normalDrain(lowPowerDrain), lowPowerDrain(lowPowerDrain) {}
+    : charge(capacity), normalDrain(lowPowerDrain), lowPowerDrain(lowPowerDrain) {
+        std::cout<<"初始化电量: "<<charge<<std::endl;
+    }
 
     void simulateUsage(int hours){
         for(int i = 1; i <= hours; i++){
-            if(charge > 20)
+            if(charge > 20.0f)
                 charge -= normalDrain;  // Normal power usage
             else
                 charge -= lowPowerDrain; // Reduced drain in power-saving mode
 
-            if(charge < 0) charge = 0; // Prevent negative charge
+            if(charge < 0.0) charge = 0.0; // Prevent negative charge
+            std::printf("运行 %d 小时后的电量: %f\n", i,charge);
         }
     }
 
