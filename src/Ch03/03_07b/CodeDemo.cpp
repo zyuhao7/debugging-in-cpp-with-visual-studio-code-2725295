@@ -19,9 +19,10 @@ public:
             if(charge > 20)
                 charge -= normalDrain;  // Normal power usage
             else
-                charge - lowPowerDrain; // Reduced drain in power-saving mode
+                charge -= lowPowerDrain; // Reduced drain in power-saving mode
 
             if(charge < 0) charge = 0; // Prevent negative charge
+        std::cout<<"pass " << i <<" hour, charge: " << charge << std::endl;
         }
     }
 
